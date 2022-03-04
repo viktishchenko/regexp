@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regular Expression</title>
+  </head>
+  <body>
+    <script>
+      //   const regexp = new RegExp(/./); // >> res Array [ "a" ]
+      //   const regexp = new RegExp(/./g); // >> res Array(7) [ "a", " ", "b", " ", "c", ".", " " ]
+      //   const regexp = new RegExp(/.+/g); // >> res Array [ "a b c. " ]
+      //   const regexp = new RegExp(/.+/); // res >> Array [ "a b c. " ]
+      //   const str = "a b c. ";
+
+      //   const regexp = new RegExp(/foam/gim); // res >> Array [ "foam" ]
+      //   const str = "Bla-bla-bla foam";
+
+      //   const regexp = new RegExp(/[b]/); // >> Array [ "b" ]
+      //   const regexp = new RegExp(/[b]/gim); // >> Array(3) [ "B", "b", "b" ]
+      //   const str = "Bla-bla-bla without foam. ";
+
+      //   const regexp = new RegExp(/[^abc]/); // res >> Array [ "A" ]
+      //   const regexp = new RegExp(/[^abc]+/); // res >> Array [ "Anything " ]
+
+      //   const regexp = new RegExp(/[^abc]+/g); // res >> Array(3) [ "Anything ", "ut ", ". " ]
+      //   const str = "Anything but abc. ";
+
+      //   const regexp = new RegExp(/[0-9]/gim); // res >> Array(7) [ "5", "6", "7", "5", "4", "3", "5" ]
+      //   const regexp = new RegExp(/[0-9]+/gim); // res >> Array [ "5675", "435" ]
+      //   const regexp = new RegExp(/[0-9]+/); // res >> Array [ "5675" ]
+      //   const str = "Bla-bla-bla yuch5675 without foam 435. ";
+
+      // const regexp = new RegExp(/[a-z]/); // res >> Array [ "n" ]
+      //   const regexp = new RegExp(/[a-z]/g); // res >> Array(5) [ "n", "l", "y", "a", "z" ]
+      //   const regexp = new RegExp(/[a-z]+/); // res >> Array [ "nly" ]
+      //   //   const regexp = new RegExp(/[a-z]+/g); // res >> Array(3) [ "nly", "a", "z" ]
+      //   const regexp = new RegExp(/[^a-z]+/g); // res >> Array(3) [ "O", " ", "-" ]
+      //   const str = "Only a-z";
+
+      //   const regexp = new RegExp(/[A-Z]/); // res >> Array [ "B" ]
+      //   const regexp = new RegExp(/[A-Z]/g); // res >> Array [ "B", "W" ]
+      //   const regexp = new RegExp(/[a-zA-Z]+/g); // res >> Array(6) [ "Bla", "bla", "bla", "yuch", "Without", "foam" ]
+      //   const str = "Bla-bla-bla yuch5675 Without foam 435. ";
+
+      //   const regexp = new RegExp(/a+/g); // res >> Array(6) [ "a", "aa", "aaa", "aaaa", "a", "aa" ]
+      //   const str = "a aa aaa aaaa bab baab";
+
+      //   const regexp = new RegExp(/ba*/g); // res >> Array(4) [ "ba", "baa", "ba", "b" ]
+      //   const str = "a ba baa aaa ba b";
+
+      //   const regexp = new RegExp(/ba?/g); // >> res Array [ "ba", "b" ]
+      //   const str = "ba b a";
+
+      //   const regexp = new RegExp(/a{3}/g); // >> res Array [ "aaa", "aaa" ]
+      //   const str = "a aa aaa aaaa";
+
+      //   const regexp = new RegExp(/a{3,6}/g); // >> res Array(4) [ "aaa", "aaaa", "aaaaaa", "aaaa" ]
+      //   const str = "a aa aaa aaaa aaaaaaaaaa";
+
+      const regexp = new RegExp(/a{3,}/g); // >> res Array(3) [ "aaa", "aaaa", "aaaaaaaaaa" ]
+      const str = "a aa aaa aaaa aaaaaaaaaa";
+
+      const res = str.match(regexp);
+      console.log("res :>> ", res);
+
+      // . - any character
+    </script>
+  </body>
+</html>
