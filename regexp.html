@@ -92,11 +92,23 @@
       //   const regexp = new RegExp(/[^aeiou]+/g); // >> res  Array(13) [ "m", "tch", "s ", "n th", " l", "st ", " (c", "s", " s", "ns", … ]
       //   const str = "matches in the list aeiou (case sensitive)";
 
-      const regexp = new RegExp(/(foo|bar|baz)/g); // >> res  Array(3) [ "foo", "baz", "bar" ]
-      const str = "matches foo character baz in the list(case bar sensitive)";
+      const regexp = new RegExp(
+        /"([А-Я][а-я]+)"|("[а-я]*[А-Я]([а-я])?)"|^(')([А-Яа-я]{1,}.,\s.+)?/gm
+      ); // >> res  Array(4) [ "\"Мама\"", "\"авТо\"", "\"гриБ\"", "'Яблоко', 'яБлоко', 'ябЛоко', 'яблОко', 'яблоКо', 'яблокО'" ]
+      const str = `"Мама"
+"авТо"
+"гриБ"
+'Яблоко', 'яБлоко', 'ябЛоко', 'яблОко', 'яблоКо', 'яблокО'
+"агент007"
+"стриж"
+"ГТО"
+"Три богатыря"`;
 
       const res = str.match(regexp);
       console.log("res :>> ", res);
+
+      // url https://regex101.com/r/Caa1in/1
+      // del https://regex101.com/delete/aobzN4rcK3qhiBHh2iZwNTg4
 
       // . - any character
     </script>
