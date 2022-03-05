@@ -59,8 +59,41 @@
       //   const regexp = new RegExp(/a{3,6}/g); // >> res Array(4) [ "aaa", "aaaa", "aaaaaa", "aaaa" ]
       //   const str = "a aa aaa aaaa aaaaaaaaaa";
 
-      const regexp = new RegExp(/a{3,}/g); // >> res Array(3) [ "aaa", "aaaa", "aaaaaaaaaa" ]
-      const str = "a aa aaa aaaa aaaaaaaaaa";
+      //   const regexp = new RegExp(/a{3,}/g); // >> res Array(3) [ "aaa", "aaaa", "aaaaaaaaaa" ]
+      //   const str = "a aa aaa aaaa aaaaaaaaaa";
+
+      //   const regexp = new RegExp(/\w+$/); // >> res Array [ "string" ]
+      //   const str = "end of string";
+
+      //   const regexp = new RegExp(/\s/g); // >> res Array [ " ", " " ]
+      //   const str = "any whitespace character";
+
+      //   const regexp = new RegExp(/\S+/); // >> res Array [ "any" ]
+      //   const str = "any non-whitespace";
+
+      //   const regexp = new RegExp(/\d/g); // >> res Array [ "1", "2" ]
+      //   const str = "one: 1, two: 2";
+
+      //   const regexp = new RegExp(/\D+/); // >> res Array [ "one: " ]
+      //   const str = "one: 1, two: 2";
+
+      //   const regexp = new RegExp(/\w+/g); // >> res  Array(3) [ "any", "word", "character" ]
+      //   const str = "any word character";
+
+      //   const regexp = new RegExp(/\W+/g); // >> res  Array(3) [ ".", "@", "%" ]
+      //   const str = "not.a@word%character";
+
+      //   const regexp = new RegExp(/\b/g); // >> res  Array(6) [ "", "", "", "", "", "" ]
+      //   const str = "not.a@w";
+
+      //   const regexp = new RegExp(/[aeiou]+/g); // >> res  Array(12) [ "a", "e", "i", "e", "i", "aeiou", "a", "e", "e", "i", … ]
+      //   const str = "matches in the list aeiou (case sensitive)";
+
+      //   const regexp = new RegExp(/[^aeiou]+/g); // >> res  Array(13) [ "m", "tch", "s ", "n th", " l", "st ", " (c", "s", " s", "ns", … ]
+      //   const str = "matches in the list aeiou (case sensitive)";
+
+      const regexp = new RegExp(/(foo|bar|baz)/g); // >> res  Array(3) [ "foo", "baz", "bar" ]
+      const str = "matches foo character baz in the list(case bar sensitive)";
 
       const res = str.match(regexp);
       console.log("res :>> ", res);
