@@ -651,3 +651,82 @@ console.log("res :>> ", res);
 // url https://regex101.com/r/Caa1in/1
 // del https://regex101.com/delete/aobzN4rcK3qhiBHh2iZwNTg4
 ```
+
+## another couple regexp examples
+
+### Matching numbers
+
+```javascript
+const regexp = new RegExp(/^-?\d+(,\d+)*(\.\d+(e\d+)?)?$/gm);
+const str = `
+3.14529
+-255.34
+128
+1.9e10
+123,340.00
+720p
+`;
+
+const res = str.match(regexp);
+console.log("res :>> ", res);
+```
+
+#### String that matches:
+
+`3.14529, -255.34, 128, 1.9e10, 123,340.00`
+
+#### String that doesn't match:
+
+`720p` (contain 🦄)
+
+## Matching phone numbers
+
+```javascript
+`1?[\s-]?\(?(\d{3})\)?[\s-]?\d{3}[\s-]?\d{4}`; // so-so
+```
+
+## Matching email
+
+```javascript
+`^([\w\.]*)`; // @+ or smth
+```
+
+## Matching HTML
+
+```javascript
+`<(\w+)` // tag
+`>([\w\s]*)<` // tag contents
+`='([\w://.]*)'`; // attributes value
+```
+
+## Matching specific filenames
+
+```javascript
+`(\w+)\.(jpg|png|gif)$`;
+// yep: >>  img0912.jpg,updated_img0912.png,favicon.gif
+// nope: >> .bash_profile,workspace.doc,documentation.html, 	img0912.jpg.tmp,access.lock
+```
+
+## Trimming whitespace
+
+```javascript
+`^\s*(.*)\s*$`;
+```
+
+## Extracting information
+
+```javascript
+`(\w+)\(([\w\.]+):(\d+)\)`;
+// smthlth :>> E/( 1553):   at widget.List.fillDown(ListView.java:652)
+// res :>> fillDown(ListView.java:652)
+```
+
+## Parsing and extracting
+
+```javascript
+`(\w+)://([\w\-\.]+)(:(\d+))?`;
+// smthlth :>>  ftp://file_server.com:21/bla_bla_bla/angry%20birds
+// res :>> ftp://file_server.com:21
+```
+
+[Introduction to SQL ](https://sqlbolt.com/)
